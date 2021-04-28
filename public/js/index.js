@@ -67,7 +67,7 @@ if (resetPasswordForm)
     const password = document.getElementById('password').value;
     const passwordConfirm = document.getElementById('passwordConfirm').value;
     const token = window.location.search.slice(1).split('=')[1];
-    console.log('token', token);
+    //console.log('token', token);
     resetPassword({ password, passwordConfirm }, token);
   });
 
