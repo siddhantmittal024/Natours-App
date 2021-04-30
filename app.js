@@ -6,6 +6,7 @@ const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
+const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
 const AppError = require('./utils/appError');
@@ -24,6 +25,15 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
 // 1) GLOBAL MIDDLEWARES
+//Implement CORS
+//Will only work for simple requests like get/post!
+app.use(cors());
+//Access-Control-Allow-Origin *
+// api.natours.comm front-end natours.com
+// app.use(cors({origin:'https://www.natours.com'}))
+
+//For non-simple requests like delete,patch etc.
+app.options('*', cors());
 // Serving static files
 app.use(express.static(path.join(__dirname, 'public')));
 
