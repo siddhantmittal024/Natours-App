@@ -98,5 +98,5 @@ if (bookBtn)
     bookTour(tourId);
   });
 
-const alterMessage = document.querySelector('body').dataset.alert;
+const alertMessage = document.querySelector('body').dataset.alert;
 if (alertMessage) showAlert('success', alterMessage, 20);
