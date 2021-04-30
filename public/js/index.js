@@ -99,4 +99,4 @@ if (bookBtn)
   });
 
 const alertMessage = document.querySelector('body').dataset.alert;
-if (alertMessage) showAlert('success', alterMessage, 20);
+if (alertMessage) showAlert('success', alertMessage, 20);
